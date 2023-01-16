@@ -31,5 +31,7 @@ jobs:
       
       - name: Build the code
         run: ./mvnw package
-      # - name: Verify the Build is Created or not
+
+      - name: Verify the Build is Created or not
+        run: ls -l target/*.war
       # - name: Deploy the Build to Tomcat (SSH to window)
