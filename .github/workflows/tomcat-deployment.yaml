@@ -6,7 +6,7 @@ on:
     branches:
       - main
   workflow_dispatch:
-  
+
 jobs:
   build-springboot-app:
     name: Build Springboot Application
@@ -16,7 +16,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: '17'
-          distribution: 'termurin'
+          distribution: 'temurin'
 
       - name: Verify Java Version
         run: java -version
