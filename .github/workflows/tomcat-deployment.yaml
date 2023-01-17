@@ -61,6 +61,10 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: my-artifact
+          path: target/*.war
+
+      - name: command after downloading
+        run: ls -l 
 
       - name: Deploy the Build to Tomcat (SSH to window)
         uses: mdallasanta/ssh-scp-deploy@v1.2.0
