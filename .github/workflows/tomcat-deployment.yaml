@@ -61,7 +61,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: my-artifact
-          path: target/apiservice-${{env.GITHUBRUNNER}}.war
+          
 
       - name: command after downloading
         run: ls -l 
