@@ -26,6 +26,9 @@ jobs:
 
       - name: Fix the Permissions of mvnw command
         run: chmod +x mvnw
+      
+      - name: Change The file name using GITHUB_RUN_NUMBER
+        run": mv target/apiservice-0.0.1-SNAPSHOT.war target/apiservice-${{github.run_number}}.war
 
       - name: Build the code
         run: ./mvnw package
