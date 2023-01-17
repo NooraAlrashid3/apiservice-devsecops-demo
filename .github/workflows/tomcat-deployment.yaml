@@ -40,7 +40,6 @@ jobs:
         run: ls -l target/*.war
 
       - name: Upload the file to artifact
-        run: mkdir -p ./target2
         uses: actions/upload-artifact@v3
         with: 
           name: my-artifact
