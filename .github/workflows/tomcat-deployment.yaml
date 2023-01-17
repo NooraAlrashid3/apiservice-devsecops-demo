@@ -45,6 +45,9 @@ jobs:
           name: my-artifact
           path: target/*.war
 
+      - name: Verify the File uploaded or not
+        run: ls -l target/*.war
+
 
       # - name: Change The file name using GITHUB_RUN_NUMBER
       #   run": mv target/apiservice-0.0.1-SNAPSHOT.war target/apiservice-${{github.run_number}}.war
@@ -69,8 +72,8 @@ jobs:
           ssh_options: -o StrictHostKeyChecking=no                     
           scp_options: -v                                     
       
-      # - name: Download the file from artifact
-      #   uses: actions/checkout@v2
-      #   uses: actions/download-artifact@v2
-      #   with:
-      #     name: my-artifact
+      - name: Download the file from artifact
+        uses: actions/checkout@v2
+        uses: actions/download-artifact@v2
+        with:
+          name: my-artifact
