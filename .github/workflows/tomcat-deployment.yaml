@@ -43,7 +43,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with: 
           name: my-artifact
-          path: target/*.war
+          path: target/apiservice-${{env.GITHUBRUNNER}}.war
 
       - name: Verify the File uploaded or not
         run: ls -l target/*.war
@@ -61,7 +61,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: my-artifact
-          path: target/*.war
+          path: target/apiservice-${{env.GITHUBRUNNER}}.war
 
       - name: command after downloading
         run: ls -l 
