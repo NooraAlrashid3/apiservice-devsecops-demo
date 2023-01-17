@@ -48,10 +48,6 @@ jobs:
       - name: Verify the File uploaded or not
         run: ls -l target/*.war
 
-
-      # - name: Change The file name using GITHUB_RUN_NUMBER
-      #   run": mv target/apiservice-0.0.1-SNAPSHOT.war target/apiservice-${{github.run_number}}.war
-      
       
 
   deployment-springboot-app:    
