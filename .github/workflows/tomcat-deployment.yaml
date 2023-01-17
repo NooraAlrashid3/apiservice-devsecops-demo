@@ -38,9 +38,12 @@ jobs:
       - name: Deploy the Build to Tomcat (SSH to window)
         uses: appleboy/scp-action@master
       with:
-        host: 20.106.254.180
-        username: noora
-        password: NooraAlrashid@1234
-        port: 22
-        source: "target/apiservice-0.0.1-SNAPSHOT.war"
-        target: 'C:\Program Files\Apache Software Foundation\Tomcat 10.0\webapps'
+        local: './target/apiservice-0.0.1-SNAPSHOT.war'                                                 
+        remote: 'C:\Program Files\Apache Software Foundation\Tomcat 10.0\webapps'                                               
+        host: ${{secrets.HOST}}                                                                       
+        user: ${{secrets.USER}}                                     
+        password: ${{secrets.PASSWORD}}                                                                   
+        pre_upload: echo "This will be executed before the upload!"  
+        post_upload: echo "This will be executed after the upload!"  
+        ssh_options: -o StrictHostKeyChecking=no                     
+        scp_options: -v                                             
