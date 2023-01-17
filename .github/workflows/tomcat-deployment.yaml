@@ -37,7 +37,7 @@ jobs:
         uses: mdallasanta/ssh-scp-deploy@v1.2.0
         with:
           local: './target/apiservice-0.0.1-SNAPSHOT.war'                                                 
-          remote: 'C:\Program Files\Apache Software Foundation\Tomcat 10.0\webapps'                                               
+          remote: 'C:\Program Files\Apache Software Foundation\Tomcat 10.0\webapps\'                                               
           host: ${{secrets.HOST}}                                                                       
           user: ${{secrets.USER}}                                     
           password: ${{secrets.PASSWORD}}                                                                   
