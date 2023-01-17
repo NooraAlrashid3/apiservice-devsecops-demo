@@ -7,6 +7,9 @@ on:
       - main
   workflow_dispatch:
 
+env:
+  GITHUBRUNNER: ${{github.run_number}}
+
 jobs:
   build-springboot-app:
     name: Build Springboot Application
@@ -27,14 +30,17 @@ jobs:
       - name: Fix the Permissions of mvnw command
         run: chmod +x mvnw
 
+      - name: Inject GITHUB_RUN_NUMBER into pom.xml
+        run: sed -i "s/REPLACEVERSION/${{env.GITHUBRUNNER}}/g" pom.xml
+
       - name: Build the code
         run: ./mvnw package
 
       - name: Verify the Build is Created or not
         run: ls -l target/*.war
 
-      - name: Change The file name using GITHUB_RUN_NUMBER
-        run": mv target/apiservice-0.0.1-SNAPSHOT.war target/apiservice-${{github.run_number}}.war
+      # - name: Change The file name using GITHUB_RUN_NUMBER
+      #   run": mv target/apiservice-0.0.1-SNAPSHOT.war target/apiservice-${{github.run_number}}.war
       
       - name: Deploy the Build to Tomcat (SSH to window)
         uses: mdallasanta/ssh-scp-deploy@v1.2.0
