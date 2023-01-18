@@ -87,6 +87,7 @@ jobs:
     steps:
       - name: Verify the health of the app
         run: curl http://20.106.254.180:8080/apiservice-32/actuator/health
+        
 
         
       
