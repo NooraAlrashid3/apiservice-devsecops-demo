@@ -86,7 +86,7 @@ jobs:
     needs: deployment-springboot-app
     steps:
       - name: Verify the health of the app
-        run: curl http://${{secrets.HOST}}:8080/apiservice-${{env.GITHUBRUNNER}}/actuator/health
+        run: curl http://20.106.254.180:8080/apiservice-32/actuator/health
 
         
       
