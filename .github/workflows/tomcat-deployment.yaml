@@ -81,12 +81,12 @@ jobs:
           scp_options: -v  
 
   verify-springboot-app:
-  name: Verify Springboot Application
-  runs-on: ubuntu-latest
-  needs: deployment-springboot-app
-  steps:
-    - name: Verify the health of the app
-      run: curl http://${{secrets.HOST}}:8080/apiservice-${{env.GITHUBRUNNER}}/actuator/health
+    name: Verify Springboot Application
+    runs-on: ubuntu-latest
+    needs: deployment-springboot-app
+    steps:
+      - name: Verify the health of the app
+        run: curl http://${{secrets.HOST}}:8080/apiservice-${{env.GITHUBRUNNER}}/actuator/health
 
-      
+        
       
