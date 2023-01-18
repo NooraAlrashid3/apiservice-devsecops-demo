@@ -80,9 +80,9 @@ jobs:
           ssh_options: -o StrictHostKeyChecking=no                     
           scp_options: -v  
 
-  management:
-  endpoint:
-    health:
-      show-details: always                                   
+      management:
+      endpoint:
+        health:
+          show-details: always                                   
       
       
