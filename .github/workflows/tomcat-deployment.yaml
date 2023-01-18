@@ -61,7 +61,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: my-artifact
-          
+
           
 
       - name: command after downloading
@@ -78,6 +78,11 @@ jobs:
           pre_upload: echo "This will be executed before the upload!"  
           post_upload: echo "This will be executed after the upload!"  
           ssh_options: -o StrictHostKeyChecking=no                     
-          scp_options: -v                                     
+          scp_options: -v  
+
+  management:
+  endpoint:
+    health:
+      show-details: always                                   
       
       
