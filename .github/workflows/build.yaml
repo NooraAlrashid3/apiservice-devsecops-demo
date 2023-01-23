@@ -35,8 +35,8 @@ jobs:
       #     key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
       #     restore-keys: ${{ runner.os }}-m2
 
-      - name: Fix the permission of mvnw command
-        run: chmod +x mvnw
+      # - name: Fix the permission of mvnw command
+      #   run: chmod +x mvnw
 
       - name: Build and analyze
         env:
